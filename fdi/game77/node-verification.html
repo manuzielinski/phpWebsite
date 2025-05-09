@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Node Verification - Byzantine Generals</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #20232a;
+        color: white;
+        font-family: Arial, sans-serif;
+      }
+      #game-container {
+        border: 2px solid #ffffff;
+        width: 800px;
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="game-container"></div>
+    <script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.js"></script>
+    <script src="game-en.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Audio will be handled completely from Phaser in game.js
+      });
+    </script>
+  </body>
+</html>
