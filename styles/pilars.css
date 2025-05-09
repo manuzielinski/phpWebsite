@@ -1,0 +1,89 @@
+@font-face {
+    font-family: "Bellerose";
+    src: url("/public/fonts/Bellerose.ttf") format("woff");
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  #pillars {
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--burgundy);
+    clip-path: polygon(0 10%, 100% 0, 100% 90%, 0 100%);
+  }
+  
+  .pillar {
+    text-align: center;
+    padding: 1px;
+    transition: all 0.3s ease;
+  }
+  
+  .pillar:hover {
+    transform: translateY(-10px);
+  }
+  
+  .pillar h2 {
+    font-family: "Bellerose", sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 0px;
+  }
+  
+  .content-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+  
+  .content-wrapper.reverse {
+    flex-direction: row-reverse;
+  }
+  
+  .text-content {
+    flex: 1;
+    padding: 0px;
+  }
+  
+  .text-content h2 {
+    font-family: 'Bellerose', sans-serif;
+    font-size: 2.5rem;
+    color: var(--burgundy);
+    margin-bottom: 10px;
+  }
+  
+  .text-content p {
+    font-family: 'Bellerose', sans-serif;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--white);
+  }
+  
+  .image-content {
+    flex: 1;
+    padding: 0px;
+    text-align: center;
+  }
+  
+  .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  @media (max-width: 768px) {
+    #pillars {
+      flex-direction: column;
+      clip-path: none;
+    }
+  
+    .pillar {
+      padding: 20px 0;
+    }
+  
+    .pillar h2 {
+      font-size: 2rem;
+    }
+  }

@@ -1,0 +1,36 @@
+@font-face {
+    font-family: 'Bellerose';
+    src: url('/public/fonts/Bellerose.ttf') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  #menu-toggle {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+    padding: 10px;
+    z-index: 1001;
+    font-family: 'Bellerose', sans-serif;
+  }
+  
+  #menu-toggle i {
+    color: var(--white);
+    font-size: 1.8rem;
+    transition: all 0.3s ease;
+  }
+  
+  #menu-toggle:hover i {
+    color: var(--burgundy);
+  }
+  
+  @media (max-width: 768px) {
+    #menu-toggle {
+      display: block;
+    }
+    
+    #menu-toggle.active i {
+      color: var(--burgundy);
+    }
+  }

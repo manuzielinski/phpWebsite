@@ -1,0 +1,52 @@
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+  }
+  
+  .social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: white;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .social-icons a:hover {
+    background-color: #d4af37;
+    transform: translateY(-3px);
+  }
+  
+  .fab {
+    font: normal normal normal 14px/1 'Font Awesome 6 Brands';
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  .fa-whatsapp:before {
+    content: "\f232";
+  }
+  
+  .fa-instagram:before {
+    content: "\f16d";
+  }
+  
+  .fa-linkedin:before {
+    content: "\f08c";
+  }
+  
+  .fa-bars:before {
+    content: "\f0c9";
+  }
+  
+  #menu-toggle i {
+    font-size: 24px;
+  }

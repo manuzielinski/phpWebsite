@@ -1,0 +1,523 @@
+@font-face {
+  font-family: 'Bellerose';
+  src: url('/public/fonts/Bellerose.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #350410;
+  --secondary: #5f0b0b;
+  --background: #f9f9f9;
+  --text: #333333;
+  --accent: #ffd166;
+  --highlight: #4ecdc4;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --font-primary: 'Bellerose', sans-serif;
+  --font-secondary: 'Playfair Display', serif;
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.section-title {
+  font-family: var(--font-primary);
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.section-text {
+  font-size: 1.1rem;
+  max-width: 800px;
+  margin: 0 auto 2rem;
+  line-height: 1.8;
+}
+
+@keyframes gradientBackground {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.shows-section {
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-size: 200% 200%;
+  animation: gradientBackground 15s ease infinite;
+  color: white;
+  text-align: center;
+}
+
+.show-highlights {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.highlight-card {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2.5rem 2rem;
+  border-radius: 12px;
+  text-align: center;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.4s, box-shadow 0.4s, background-color 0.4s;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.highlight-card:nth-child(1) { animation-delay: 0.1s; }
+.highlight-card:nth-child(2) { animation-delay: 0.3s; }
+.highlight-card:nth-child(3) { animation-delay: 0.5s; }
+.highlight-card:nth-child(4) { animation-delay: 0.7s; }
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.highlight-card i {
+  font-size: 3.5rem;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  display: block;
+  animation: float 3s ease-in-out infinite;
+}
+
+.highlight-card h3 {
+  font-family: var(--font-primary);
+  font-size: 1.7rem;
+  margin-bottom: 1rem;
+}
+
+.highlight-card p {
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.reserva-section {
+  padding: 6rem 1rem;
+  background-color: var(--background);
+  text-align: center;
+  position: relative;
+}
+
+.reserva-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--primary), var(--accent), var(--primary));
+}
+
+.reserva-form {
+  max-width: 600px;
+  margin: 2rem auto 0;
+  padding: 3rem;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  z-index: 1;
+}
+
+.reserva-form:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: all 0.3s;
+  background-color: #f8f8f8;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 10px rgba(255, 209, 102, 0.3);
+  background-color: white;
+  outline: none;
+}
+
+.button-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 1rem;
+  justify-content: center;
+}
+
+.select-button {
+  padding: 10px 15px;
+  border: 2px solid var(--primary);
+  background-color: transparent;
+  color: var(--primary);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.select-button:hover {
+  background-color: var(--primary);
+  color: white;
+  transform: translateY(-3px);
+}
+
+.select-button.active {
+  background-color: var(--primary);
+  color: white;
+  border-color: var(--primary);
+  box-shadow: 0 5px 15px rgba(53, 4, 16, 0.3);
+}
+
+#char-count {
+  text-align: right;
+  font-size: 0.85rem;
+  color: #777;
+  margin-top: 0.5rem;
+}
+
+.submit-button {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: 0.5s;
+}
+
+.submit-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 7px 20px rgba(53, 4, 16, 0.4);
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+#message {
+  margin-top: 2rem;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s;
+}
+
+#message.success {
+  background-color: rgba(40, 167, 69, 0.1);
+  color: #28a745;
+  border: 1px solid #28a745;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#message.error {
+  background-color: rgba(220, 53, 69, 0.1);
+  color: #dc3545;
+  border: 1px solid #dc3545;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.contact {
+  padding: 6rem 1rem;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  background-size: 200% 200%;
+  animation: gradientBackground 15s ease infinite;
+  color: white;
+  text-align: center;
+  position: relative;
+}
+
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(to right, var(--accent), var(--highlight), var(--accent));
+}
+
+.contact .section-title {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact .section-text {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.whatsapp-button-container {
+  display: inline-block;
+}
+
+.contact-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--accent);
+  color: var(--primary);
+  padding: 16px 32px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 6px 15px rgba(255, 209, 102, 0.3);
+}
+
+.contact-button:hover {
+  background-color: var(--highlight);
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 10px 25px rgba(78, 205, 196, 0.4);
+  color: var(--primary);
+}
+
+.contact-button i {
+  margin-right: 12px;
+  font-size: 24px;
+}
+
+.animated {
+  animation: float 3s ease-in-out infinite;
+}
+
+input[type="hidden"] {
+  display: none;
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 1024px) {
+  .section-title {
+    font-size: 2.7rem;
+  }
+  
+  .highlight-card {
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 100%;
+  }
+  
+  .reserva-form {
+    padding: 2.5rem;
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.3rem;
+  }
+  
+  .section-text {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+  
+  .highlight-card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 2rem 1.5rem;
+  }
+  
+  .highlight-card i {
+    font-size: 3rem;
+  }
+  
+  .highlight-card h3 {
+    font-size: 1.5rem;
+  }
+  
+  .highlight-card p {
+    font-size: 1rem;
+  }
+  
+  .reserva-form {
+    padding: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .form-group label {
+    font-size: 1rem;
+  }
+  
+  .button-select {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .select-button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .contact .section-title {
+    font-size: 2.3rem;
+  }
+  
+  .contact .section-text {
+    font-size: 1rem;
+  }
+  
+  .contact-button {
+    padding: 14px 28px;
+    font-size: 1.1rem;
+  }
+  
+  .shows-section, .reserva-section, .contact {
+    padding: 4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 2rem;
+  }
+  
+  .highlight-card {
+    padding: 1.5rem 1rem;
+  }
+  
+  .highlight-card i {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .highlight-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .reserva-form {
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+  
+  .submit-button {
+    padding: 12px;
+    font-size: 16px;
+  }
+  
+  .contact-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  .contact-button i {
+    font-size: 20px;
+  }
+  
+  .shows-section, .reserva-section, .contact {
+    padding: 3rem 1rem;
+  }
+}

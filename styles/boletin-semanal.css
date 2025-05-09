@@ -1,0 +1,288 @@
+@font-face {
+  font-family: 'Bellerose';
+  src: url('/public/fonts/Bellerose.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #350410;
+  --secondary: #666666;
+  --background: #f4f4f4;
+  --card-bg: #ffffff;
+  --text: #333333;
+  --accent: #77aaff;
+  --success: #28a745;
+  --danger: #dc3545;
+  --shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bellerose', sans-serif;
+}
+
+body {
+  font-family: 'Bellerose', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.container {
+  width: 95%;
+  max-width: 1080px;
+  margin: auto;
+  overflow: hidden;
+  padding: 15px;
+}
+
+header {
+  background: var(--primary);
+  color: #fff;
+  padding: 25px 0;
+  border-bottom: var(--accent) 3px solid;
+  text-align: center;
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Bellerose', sans-serif;
+  margin: 0;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.logo-luna {
+  width: 70px;
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  transition: transform 0.3s ease;
+}
+
+.logo-luna:hover {
+  transform: scale(1.1);
+}
+
+.main {
+  background: var(--card-bg);
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  padding: 25px;
+}
+
+.info-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  background: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.info-box > div {
+  flex: 1 1 300px;
+  text-align: center;
+  margin: 10px;
+  padding: 15px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.info-box > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.info-box h2 {
+  font-family: 'Bellerose', sans-serif;
+  margin: 10px 0;
+  font-size: 1.4rem;
+  color: var(--primary);
+}
+
+.large-text {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.variation {
+  font-family: 'Bellerose', sans-serif;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 4px;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+.green-text {
+  color: var(--success);
+  background-color: rgba(40, 167, 69, 0.1);
+}
+
+.red-text {
+  color: var(--danger);
+  background-color: rgba(220, 53, 69, 0.1);
+}
+
+.chart-container {
+  position: relative;
+  height: 400px;
+  margin: 30px 0;
+  background-color: var(--card-bg);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.grid-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 15px;
+  background: #e9ecef;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 25px;
+}
+
+.grid-box > div {
+  flex: 1 1 300px;
+  margin: 10px;
+  padding: 15px;
+  background-color: var(--card-bg);
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: var(--transition);
+}
+
+.grid-box > div:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.bold-text {
+  font-family: 'Bellerose', sans-serif;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    padding: 10px;
+  }
+  
+  header h1 {
+    font-size: 1.8rem;
+  }
+  
+  .logo-luna {
+    width: 60px;
+  }
+  
+  .info-box, .grid-box {
+    gap: 10px;
+  }
+  
+  .info-box > div, .grid-box > div {
+    flex: 1 1 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  header {
+    padding: 20px 0;
+  }
+  
+  header h1 {
+    font-size: 1.6rem;
+  }
+  
+  .logo-luna {
+    width: 50px;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .main {
+    padding: 20px;
+  }
+  
+  .info-box, .grid-box {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .info-box > div, .grid-box > div {
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .chart-container {
+    height: 350px;
+  }
+  
+  .large-text {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.4rem;
+    padding: 0 50px;
+  }
+  
+  .logo-luna {
+    width: 40px;
+  }
+  
+  .main {
+    padding: 15px;
+    margin: 15px 0;
+  }
+  
+  .info-box, .grid-box {
+    padding: 15px;
+  }
+  
+  .info-box > div, .grid-box > div {
+    padding: 10px;
+    margin: 5px;
+  }
+  
+  .info-box h2 {
+    font-size: 1.2rem;
+  }
+  
+  .large-text {
+    font-size: 1.3rem;
+  }
+  
+  .chart-container {
+    height: 300px;
+    margin: 20px 0;
+  }
+  
+  .variation {
+    padding: 3px 8px;
+    font-size: 0.9rem;
+  }
+}

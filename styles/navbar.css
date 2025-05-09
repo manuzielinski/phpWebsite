@@ -1,0 +1,221 @@
+@font-face {
+  font-family: 'Bellerose';
+  src: url('/public/fonts/Bellerose.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #350410;
+  --secondary: #d4af37;
+  --white: #ffffff;
+  --black: #000000;
+  --burgundy: #8b0000;
+  --burgundy-dark: #5a0000;
+  --font-size-body: 16px;
+}
+
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 15px 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  box-sizing: border-box;
+  /* Eliminamos overflow: hidden para permitir que el menú se expanda fuera del navbar */
+}
+
+#navbar.scrolled {
+  padding: 10px 5%;
+  background-color: rgba(0, 0, 0, 0.9);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  z-index: 1001;
+  max-width: 70%;
+}
+
+.logo img {
+  height: 100px;
+  width: auto;
+  transition: height 0.3s ease;
+  max-width: 100%;
+}
+
+#navbar.scrolled .logo img {
+  height: 80px;
+}
+
+#navbar ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar ul li {
+  margin-left: 30px;
+  position: relative;
+}
+
+#navbar ul li a {
+  font-family: "Bellerose", sans-serif;
+  color: var(--white);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: var(--font-size-body);
+  transition: all 0.3s ease;
+  padding: 5px 0;
+  position: relative;
+}
+
+#navbar ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--burgundy);
+  transition: width 0.3s ease;
+}
+
+#navbar ul li a:hover {
+  color: var(--burgundy);
+}
+
+#navbar ul li a:hover::after {
+  width: 100%;
+}
+
+/* Menú hamburguesa - Estilos corregidos */
+#menu-toggle {
+  display: none;
+  background: rgba(53, 4, 16, 0.5);
+  border: none;
+  color: var(--white);
+  font-size: 1.8rem;
+  cursor: pointer;
+  z-index: 1002; /* Aumentamos el z-index para asegurar que esté por encima del menú */
+  transition: all 0.3s ease;
+  padding: 8px;
+  border-radius: 5px;
+  width: 45px;
+  height: 45px;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+#menu-toggle:hover {
+  color: var(--secondary);
+  background-color: rgba(53, 4, 16, 0.8);
+}
+
+#menu-toggle.active {
+  color: var(--secondary);
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    padding: 10px 15px;
+  }
+
+  .logo img {
+    height: 70px;
+  }
+
+  #menu-toggle {
+    display: flex;
+  }
+
+  #navbar ul {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: right 0.3s ease;
+    backdrop-filter: blur(10px);
+    padding: 80px 0;
+    z-index: 1001; /* Aseguramos que el menú tenga un z-index adecuado */
+  }
+
+  #navbar ul.active {
+    right: 0;
+    display: flex; /* Forzamos display flex cuando está activo */
+    visibility: visible; /* Aseguramos que sea visible */
+    opacity: 1; /* Aseguramos que sea completamente opaco */
+  }
+
+  #navbar ul li {
+    margin: 20px 0;
+    margin-left: 0;
+    display: block; /* Aseguramos que los elementos de lista sean visibles */
+    width: 100%;
+    text-align: center;
+  }
+
+  #navbar ul li a {
+    font-size: calc(var(--font-size-body) * 1.2);
+    display: block; /* Aseguramos que los enlaces sean visibles */
+    padding: 10px 20px; /* Aumentamos el área clickeable */
+  }
+}
+
+@media (max-width: 480px) {
+  #navbar {
+    padding: 8px 10px;
+  }
+  
+  .logo img {
+    height: 50px;
+  }
+
+  #navbar ul {
+    width: 100%;
+  }
+
+  #navbar ul li a {
+    font-size: var(--font-size-body);
+  }
+  
+  #menu-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 1.5rem;
+    right: 10px;
+  }
+}
+
+@media (max-width: 360px) {
+  #navbar {
+    padding: 6px 8px;
+  }
+  
+  .logo img {
+    height: 40px;
+  }
+  
+  #menu-toggle {
+    width: 35px;
+    height: 35px;
+    font-size: 1.4rem;
+    right: 8px;
+  }
+}

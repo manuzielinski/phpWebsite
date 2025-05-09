@@ -1,0 +1,596 @@
+@font-face {
+  font-family: 'Bellerose';
+  src: url('/public/fonts/Bellerose.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary-color: #8b0000;
+  --secondary-color: #f8f4e6;
+  --accent-color: #d4af37;
+  --text-color: #333;
+  --light-text: #f8f4e6;
+  --shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --hover-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bellerose', sans-serif;
+}
+
+body {
+  font-family: 'Bellerose', sans-serif;
+  background-color: var(--secondary-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.hero {
+  height: 500px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('/public/assets/grupal2.png');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 2rem;
+}
+
+.hero h1 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.hero p {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.3rem;
+  max-width: 700px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.8;
+}
+
+.main-section {
+  padding: 5rem 10%;
+  text-align: center;
+  background-color: #ffffff; /* Cambiado a blanco puro */
+}
+
+.section-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 2.5rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.section-title::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: var(--accent-color);
+  bottom: -10px;
+  left: 20%;
+}
+
+.taller-description {
+  font-family: 'Bellerose', sans-serif;
+  max-width: 800px;
+  margin: 0 auto 3.5rem;
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+/* Estilos específicos para el logo del taller */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 2rem;
+  max-width: 100%;
+  padding: 0 20px;
+}
+
+.taller-logo {
+  max-width: 100%;
+  height: auto;
+  max-height: 250px;
+  object-fit: contain;
+}
+
+.taller-gallery {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  box-shadow: var(--shadow);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.gallery-image {
+  flex: 1;
+  max-width: 50%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  transition: var(--transition);
+}
+
+.gallery-text {
+  flex: 1;
+  padding: 2.5rem;
+  background-color: white;
+}
+
+.gallery-text h3 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+.gallery-text p {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+}
+
+.productos-section {
+  padding: 5rem 10% 3rem;
+  background-color: white;
+}
+
+.productos-title {
+  font-family: 'Bellerose', sans-serif;
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.productos-title::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: var(--accent-color);
+  bottom: -10px;
+  left: 20%;
+}
+
+.productos-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3.5rem;
+}
+
+.producto {
+  background-color: var(--secondary-color);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  transition: var(--transition);
+}
+
+.producto:hover {
+  transform: translateY(-10px);
+  box-shadow: var(--hover-shadow);
+}
+
+.producto-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  height: 250px;
+}
+
+.producto-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.producto:hover .producto-img img {
+  transform: scale(1.1);
+}
+
+.producto-content {
+  padding: 1.8rem;
+  text-align: center;
+}
+
+.producto-content h3 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.6rem;
+  margin-bottom: 0.8rem;
+  color: var(--primary-color);
+}
+
+.producto-content p {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+}
+
+.btn {
+  font-family: 'Bellerose', sans-serif;
+  display: inline-block;
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0.9rem 1.8rem;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: var(--transition);
+}
+
+.btn:hover {
+  background-color: var(--accent-color);
+  color: var(--text-color);
+  transform: translateY(-3px);
+}
+
+.image-gallery {
+  padding: 5rem 10%;
+  background-color: var(--secondary-color);
+  text-align: center;
+}
+
+.gallery-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 2.8rem;
+  margin-bottom: 3.5rem;
+  color: var(--primary-color);
+  position: relative;
+  display: inline-block;
+}
+
+.gallery-title::after {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 3px;
+  background-color: var(--accent-color);
+  bottom: -10px;
+  left: 20%;
+}
+
+.gallery-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.gallery-item {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(139, 0, 0, 0.7);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.gallery-item:hover .gallery-overlay {
+  opacity: 1;
+}
+
+.gallery-overlay h4 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  overflow: auto;
+}
+
+.modal-content {
+  display: block;
+  margin: 5% auto;
+  max-width: 80%;
+  max-height: 80%;
+  animation: zoom 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: var(--accent-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Media Queries para mejorar la responsividad */
+@media (max-width: 1024px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .section-title, .productos-title, .gallery-title {
+    font-size: 2.5rem;
+  }
+
+  .taller-description {
+    font-size: 1.1rem;
+  }
+
+  .gallery-image {
+    height: 400px;
+  }
+
+  .gallery-text h3 {
+    font-size: 1.8rem;
+  }
+
+  .productos-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  
+  .taller-logo {
+    max-height: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 400px;
+  }
+
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  .section-title, .productos-title, .gallery-title {
+    font-size: 2.2rem;
+  }
+
+  .taller-description {
+    font-size: 1rem;
+  }
+
+  .taller-gallery {
+    flex-direction: column;
+  }
+
+  .gallery-image {
+    max-width: 100%;
+    height: 300px;
+  }
+
+  .gallery-text {
+    padding: 2rem;
+  }
+
+  .gallery-text h3 {
+    font-size: 1.6rem;
+  }
+
+  .gallery-text p {
+    font-size: 1rem;
+  }
+
+  .productos-container {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+  }
+
+  .producto-img {
+    height: 220px;
+  }
+
+  .producto-content h3 {
+    font-size: 1.4rem;
+  }
+
+  .producto-content p {
+    font-size: 1rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+
+  .gallery-item {
+    height: 250px;
+  }
+
+  .main-section, .productos-section, .image-gallery {
+    padding: 4rem 5%;
+  }
+  
+  .taller-logo {
+    max-height: 180px;
+  }
+  
+  .logo-container {
+    padding: 0 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 350px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .section-title, .productos-title, .gallery-title {
+    font-size: 1.8rem;
+  }
+
+  .taller-description {
+    font-size: 0.95rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .gallery-image {
+    height: 250px;
+  }
+
+  .gallery-text {
+    padding: 1.5rem;
+  }
+
+  .gallery-text h3 {
+    font-size: 1.4rem;
+  }
+
+  .gallery-text p {
+    font-size: 0.95rem;
+  }
+
+  .productos-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .producto-content {
+    padding: 1.5rem;
+  }
+
+  .producto-content h3 {
+    font-size: 1.3rem;
+  }
+
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+  }
+
+  .gallery-item {
+    height: 220px;
+  }
+
+  .gallery-overlay h4 {
+    font-size: 1.3rem;
+  }
+
+  .modal-content {
+    max-width: 95%;
+  }
+
+  .close {
+    top: 10px;
+    right: 20px;
+    font-size: 30px;
+  }
+
+  .main-section, .productos-section, .image-gallery {
+    padding: 3rem 5%;
+  }
+  
+  .taller-logo {
+    max-height: 150px;
+  }
+  
+  .logo-container {
+    padding: 0 5px;
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Ajustes adicionales para pantallas muy pequeñas */
+@media (max-width: 360px) {
+  .taller-logo {
+    max-height: 120px;
+  }
+  
+  .main-section {
+    padding: 2.5rem 4%;
+  }
+  
+  .taller-description {
+    font-size: 0.9rem;
+    margin-bottom: 2rem;
+  }
+}

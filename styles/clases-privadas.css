@@ -1,0 +1,484 @@
+@font-face {
+  font-family: 'Bellerose';
+  src: url('/public/fonts/Bellerose.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --primary: #350410;
+  --secondary: #d4af37;
+  --background: #f8f4e6;
+  --text: #333333;
+  --accent: #ffffff;
+  --highlight: #999999;
+  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Bellerose', sans-serif;
+}
+
+body {
+  font-family: 'Bellerose', sans-serif;
+  background-color: var(--background);
+  color: var(--text);
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+  filter: brightness(0.7);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 0 1.5rem;
+}
+
+.hero-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 4rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-subtitle {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.5rem;
+  color: var(--text);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 2s ease-in-out;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  font-family: 'Bellerose', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--primary);
+  color: var(--accent);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: var(--transition);
+  animation: fadeIn 2.5s ease-in-out;
+}
+
+.hero-button:hover {
+  background-color: var(--secondary);
+  transform: translateY(-5px);
+}
+
+.hero-button i {
+  margin-right: 0.5rem;
+}
+
+.class-info {
+  background-color: var(--accent);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.class-info-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.class-info-text {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: var(--text);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.class-highlights {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 2.5rem;
+}
+
+.highlight-card {
+  flex: 1 1 30%;
+  min-width: 250px;
+  background-color: var(--background);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeIn 2s ease-in-out;
+  box-shadow: var(--shadow);
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.highlight-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.highlight-card h3 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.highlight-card p {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.benefits {
+  background-color: var(--accent);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.benefits-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.benefits-text {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: var(--text);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 2.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.benefit-card {
+  background-color: var(--background);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeIn 2s ease-in-out;
+  box-shadow: var(--shadow);
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.benefit-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.benefit-card h3 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.benefit-card p {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.other-disciplines {
+  background-color: var(--background);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.disciplines-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 3rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.disciplines-intro {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.25rem;
+  max-width: 800px;
+  margin: 0 auto 2.5rem auto;
+  color: var(--text);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.disciplines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin-top: 2.5rem;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.discipline-card {
+  background-color: var(--accent);
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  transition: var(--transition);
+  animation: fadeIn 2s ease-in-out;
+  box-shadow: var(--shadow);
+}
+
+.discipline-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.discipline-card i {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.discipline-card h3 {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: var(--primary);
+}
+
+.discipline-card p {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 1rem;
+  color: var(--text);
+}
+
+.contact {
+  background-color: var(--primary);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.contact-title {
+  font-family: 'Bellerose', sans-serif;
+  font-size: 3rem;
+  color: var(--accent);
+  margin-bottom: 2rem;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-button {
+  font-family: 'Bellerose', sans-serif;
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--secondary);
+  color: var(--primary);
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  font-size: 1.25rem;
+  transition: var(--transition);
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.contact-button:hover {
+  background-color: var(--accent);
+  transform: translateY(-5px);
+}
+
+.contact-button i {
+  margin-right: 0.5rem;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1024px) {
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+  
+  .class-info-title, 
+  .benefits-title, 
+  .disciplines-title, 
+  .contact-title {
+    font-size: 2.7rem;
+  }
+  
+  .class-info-text, 
+  .benefits-text, 
+  .disciplines-intro {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    height: 80vh;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+  
+  .hero-button {
+    padding: 0.9rem 1.8rem;
+    font-size: 1.1rem;
+  }
+  
+  .class-info-title, 
+  .benefits-title, 
+  .disciplines-title, 
+  .contact-title {
+    font-size: 2.3rem;
+  }
+  
+  .class-info-text, 
+  .benefits-text, 
+  .disciplines-intro {
+    font-size: 1.1rem;
+    padding: 0 15px;
+  }
+  
+  .highlight-card, 
+  .benefit-card, 
+  .discipline-card {
+    flex: 1 1 100%;
+    min-width: 100%;
+  }
+  
+  .class-info, 
+  .benefits, 
+  .other-disciplines, 
+  .contact {
+    padding: 4rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    height: 70vh;
+  }
+  
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .hero-button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+  
+  .class-info-title, 
+  .benefits-title, 
+  .disciplines-title, 
+  .contact-title {
+    font-size: 2rem;
+  }
+  
+  .class-info-text, 
+  .benefits-text, 
+  .disciplines-intro {
+    font-size: 1rem;
+  }
+  
+  .highlight-card, 
+  .benefit-card, 
+  .discipline-card {
+    padding: 20px;
+  }
+  
+  .highlight-card i, 
+  .benefit-card i, 
+  .discipline-card i {
+    font-size: 2rem;
+  }
+  
+  .highlight-card h3, 
+  .benefit-card h3, 
+  .discipline-card h3 {
+    font-size: 1.3rem;
+  }
+  
+  .contact-button {
+    padding: 0.8rem 1.6rem;
+    font-size: 1rem;
+  }
+  
+  .class-info, 
+  .benefits, 
+  .other-disciplines, 
+  .contact {
+    padding: 3rem 1rem;
+  }
+}
