@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservas de Shows | Tango Triple Frontera</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="/styles/navbar.css">
+  <link rel="stylesheet" href="/styles/footer.css">
+  <link rel="stylesheet" href="/styles/reservas.css">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
+</head>
+<body>
+  <nav id="navbar">
+    <div class="logo">
+      <img src="/assets/Under-logo-transparente.png" alt="UnderTango Logo">
+    </div>
+    <button id="menu-toggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul id="navbar-menu">
+      <li><a href="../index.html">Inicio</a></li>
+      <li><a href="#shows">Espectáculos</a></li>
+      <li><a href="#reserva">Reservas</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a href="faq.html">Preguntas Frecuentes</a></li>
+    </ul>
+  </nav>
+
+  <section class="shows-section" id="shows">
+    <div class="container">
+      <h2 class="section-title">Nuestros Espectáculos</h2>
+      <p class="section-text">
+        Ofrecemos una amplia gama de espectáculos que se adaptan a las necesidades de nuestros clientes. Nos desenvolvemos principalmente en la Triple Frontera entre Paraguay, Brasil y Argentina, pero también llevamos nuestro arte más allá de estas fronteras. Nuestra pasión por el tango nos impulsa a crear experiencias únicas e inolvidables para cada ocasión.
+      </p>
+      <div class="show-highlights">
+        <div class="highlight-card">
+          <i class="fas fa-music"></i>
+          <h3>Shows de Danza</h3>
+          <p>Espectáculos de tango tradicional y fusión.</p>
+        </div>
+        <div class="highlight-card">
+          <i class="fas fa-guitar"></i>
+          <h3>Shows de Música en Vivo</h3>
+          <p>Bandas y solistas de tango y géneros afines.</p>
+        </div>
+        <div class="highlight-card">
+          <i class="fas fa-star"></i>
+          <h3>Megaeventos</h3>
+          <p>Producciones a gran escala para ocasiones especiales.</p>
+        </div>
+        <div class="highlight-card">
+          <i class="fas fa-globe-americas"></i>
+          <h3>Show Triplefrontera</h3>
+          <p>Una fusión única de las artes y culturas de Argentina, Brasil y Paraguay.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reserva-section" id="reserva">
+    <div class="container">
+      <h2 class="section-title">Reserva un Espectáculo</h2>
+      <form id="bookingForm" class="reserva-form">
+        <div class="form-group">
+          <label for="name">Nombre:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha Deseada:</label>
+          <input type="date" id="date" name="date" required>
+        </div>
+        <div class="form-group">
+          <label for="show-type">Tipo de Espectáculo:</label>
+          <div class="button-select">
+            <button type="button" data-value="show-danza" class="select-button">Show de danza</button>
+            <button type="button" data-value="show-musica" class="select-button">Show de música</button>
+            <button type="button" data-value="show-hibrido" class="select-button">Show híbrido</button>
+            <button type="button" data-value="show-triplefrontera" class="select-button">Show triplefrontera</button>
+            <button type="button" data-value="megaevento" class="select-button">Megaevento</button>
+            <button type="button" data-value="otros" class="select-button">Otros</button>
+          </div>
+          <input type="hidden" id="show-type" name="show-type" required>
+        </div>
+        <div class="form-group">
+          <label for="comments">Comentarios:</label>
+          <textarea id="comments" name="comments" maxlength="300"></textarea>
+          <p id="char-count">0/300 caracteres</p>
+        </div>
+        <button type="submit" class="submit-button">Enviar Solicitud</button>
+      </form>
+      <div id="message"></div>
+    </div>
+  </section>
+
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="section-text">¿Tienes preguntas o quieres más información? ¡Escríbenos!</p>
+      <div class="whatsapp-button-container">
+        <a href="https://wa.me/+5493757618270" class="contact-button">
+          <i class="fab fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="/assets/Under-logo-transparente.png" alt="UnderTango Logo">
+      </div>
+      <div class="footer-section">
+        <h3>Contacto</h3>
+        <p>Email: <a href="" class="__cf_email__" data-cfemail="147d7a727b54617a70716660757a737b3a777b79">undertangoclub@gmail.com</a></p>
+        <p>Teléfono: +54 9 3757 61-8270</p>
+      </div>
+      <div class="footer-section">
+        <h3>Clases</h3>
+        <ul>
+          <li><a href="clasesGrupales.html">Clases Grupales</a></li>
+          <li><a href="clasesprivadas.html">Clases Privadas</a></li>
+          <li><a href="https://hotmart.com/es/marketplace/productos/20-lecciones-de-tango/F62016758K">Cursos Online</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Shows</h3>
+        <ul>
+          <li><a href="usersCalendar.html">Próximos Shows</a></li>
+          <li><a href="reservas.html">Reservas</a></li>
+          <li><a href="artistas.html">Artistas</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Fondo de Inversión</h3>
+        <ul>
+          <li><a href="../fdi/fondo-de-inversiones.html">Página de Inversiones</a></li>
+          <li><a href="boletin-semanal.html">Boletín Semanal</a></li>
+          <li><a href="https://docs.google.com/document/d/1-chA3vrOGWxO69qJzOj9P7g9RSxSyxY9Yu0DWcCjX4Y/edit?usp=sharing">Whitepaper</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Síguenos</h3>
+        <div class="social-icons">
+          <a href="https://wa.me/+5493757618270" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="https://www.instagram.com/undertangoclub/?hl=es" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/undertangoclub/posts/?feedView=all" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Undertango. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  <script src="/scripts/reservas.js"></script>
+  <script src="/scripts/burguer.js"></script>
+  <script src="/scripts/usersCalendar.js"></script>
+</body>
+</html>
